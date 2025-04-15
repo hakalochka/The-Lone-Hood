@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b46bb043tywkg"]
+
+[ext_resource type="Texture2D" uid="uid://b8mrl0ivkf4kf" path="res://assets/sprites/environment/BG_1.png" id="1_5m18b"]
+[ext_resource type="Texture2D" uid="uid://c16ud0wpas67b" path="res://assets/sprites/environment/BG_3.png" id="1_uc7c2"]
+[ext_resource type="PackedScene" uid="uid://166ypjx78qmt" path="res://scenes/player.tscn" id="2_xwdbo"]
+[ext_resource type="Texture2D" uid="uid://c7fg0ph2f8m4h" path="res://assets/sprites/environment/BG_2.png" id="2_yi8oj"]
+
+[node name="level_init" type="Node2D"]
+
+[node name="BG3" type="Sprite2D" parent="."]
+position = Vector2(1016, -216)
+texture = ExtResource("1_uc7c2")
+
+[node name="BG2" type="Sprite2D" parent="."]
+position = Vector2(784, -208)
+texture = ExtResource("2_yi8oj")
+
+[node name="BG1" type="Sprite2D" parent="."]
+position = Vector2(968, -200)
+texture = ExtResource("1_5m18b")
+
+[node name="Player" parent="." instance=ExtResource("2_xwdbo")]
+position = Vector2(96, -144)
