@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://78m8j561eg6"]
+[gd_scene load_steps=9 format=3 uid="uid://78m8j561eg6"]
 
 [ext_resource type="Script" path="res://scripts/bat.gd" id="1_0oyw3"]
 [ext_resource type="Texture2D" uid="uid://tyqcvwa4ivp4" path="res://assets/sprites/Bat.png" id="1_ilea2"]
-[ext_resource type="PackedScene" uid="uid://btut28se4ejsy" path="res://scenes/killzone.tscn" id="3_qh3ly"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_csydh"]
 atlas = ExtResource("1_ilea2")
@@ -53,9 +52,9 @@ animation = &"fly"
 autoplay = "fly"
 frame_progress = 0.519404
 
-[node name="killzone" parent="." instance=ExtResource("3_qh3ly")]
+[node name="hitBox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
 position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_cfhfr")
 

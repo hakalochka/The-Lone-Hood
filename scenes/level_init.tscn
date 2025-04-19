@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://b46bb043tywkg"]
+[gd_scene load_steps=18 format=4 uid="uid://b46bb043tywkg"]
 
 [ext_resource type="Texture2D" uid="uid://b8mrl0ivkf4kf" path="res://assets/sprites/environment/BG_1.png" id="1_5m18b"]
 [ext_resource type="Script" path="res://scripts/level_init.gd" id="1_qt213"]
@@ -11,9 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://bv4t1i50tnw54" path="res://assets/sprites/environment/Terrain_and_Props.png" id="7_bhv61"]
 [ext_resource type="PackedScene" uid="uid://tn4n1dm8ewmg" path="res://scenes/star_pickup.tscn" id="10_i01op"]
 [ext_resource type="PackedScene" uid="uid://dwc2eydsn58t0" path="res://scenes/finish.tscn" id="11_8x5c7"]
-[ext_resource type="PackedScene" uid="uid://gy0ocujkykgi" path="res://scenes/spike.tscn" id="11_ngeb0"]
 [ext_resource type="PackedScene" uid="uid://brcuux78qgtha" path="res://scenes/health_pickup.tscn" id="12_ng6dm"]
 [ext_resource type="PackedScene" uid="uid://btut28se4ejsy" path="res://scenes/killzone.tscn" id="14_440w7"]
+[ext_resource type="PackedScene" uid="uid://78m8j561eg6" path="res://scenes/bat.tscn" id="15_j5pq2"]
+[ext_resource type="PackedScene" uid="uid://caeixyfhpqmgj" path="res://scenes/skullwolf.tscn" id="16_iaa6w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dfcqv"]
 texture = ExtResource("7_bhv61")
@@ -497,9 +498,6 @@ tile_set = SubResource("TileSet_ytc2l")
 [node name="finish" parent="." instance=ExtResource("11_8x5c7")]
 position = Vector2(512, -16)
 
-[node name="spike" parent="." instance=ExtResource("11_ngeb0")]
-position = Vector2(208, -32)
-
 [node name="health_pickup" parent="." instance=ExtResource("12_ng6dm")]
 position = Vector2(276, -80)
 
@@ -514,5 +512,11 @@ position = Vector2(320, -80)
 
 [node name="killzone" parent="." instance=ExtResource("14_440w7")]
 position = Vector2(504, 304)
+
+[node name="bat" parent="." instance=ExtResource("15_j5pq2")]
+position = Vector2(344, -104)
+
+[node name="skullwolf" parent="." instance=ExtResource("16_iaa6w")]
+position = Vector2(264, -53)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

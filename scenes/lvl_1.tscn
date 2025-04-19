@@ -432,7 +432,7 @@ tile_set = SubResource("TileSet_eu4oo")
 
 [node name="killzone" parent="." instance=ExtResource("2_wj7xo")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="killzone"]
 shape = SubResource("WorldBoundaryShape2D_ar0aq")
 
 [node name="bat" parent="." instance=ExtResource("3_0jeyx")]
