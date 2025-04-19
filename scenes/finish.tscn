@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwc2eydsn58t0"]
+
+[ext_resource type="Script" path="res://scripts/finish.gd" id="1_vplvm"]
+[ext_resource type="Texture2D" uid="uid://bv4t1i50tnw54" path="res://assets/sprites/environment/Terrain_and_Props.png" id="1_ylify"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubib8"]
+size = Vector2(20, 31)
+
+[node name="finish" type="Area2D"]
+script = ExtResource("1_vplvm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.57628e-07, -16)
+scale = Vector2(1.29167, 1.29167)
+texture = ExtResource("1_ylify")
+region_enabled = true
+region_rect = Rect2(168, 456, 35, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -15.5)
+shape = SubResource("RectangleShape2D_ubib8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,205 @@
+[gd_scene load_steps=29 format=3 uid="uid://cre1t1crjqa8w"]
+
+[ext_resource type="Texture2D" uid="uid://mwm3humh3ied" path="res://assets/sprites/Wooden Pixel Art GUI 32x32.png" id="1_au53q"]
+[ext_resource type="Script" path="res://scripts/levels.gd" id="1_j04mn"]
+[ext_resource type="Texture2D" uid="uid://c16ud0wpas67b" path="res://assets/sprites/environment/BG_3.png" id="1_uwxte"]
+[ext_resource type="Script" path="res://scripts/home_btn.gd" id="2_3xihk"]
+[ext_resource type="Texture2D" uid="uid://c7fg0ph2f8m4h" path="res://assets/sprites/environment/BG_2.png" id="2_qx4pf"]
+[ext_resource type="Texture2D" uid="uid://b8mrl0ivkf4kf" path="res://assets/sprites/environment/BG_1.png" id="3_7wk2v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bebc"]
+atlas = ExtResource("1_au53q")
+region = Rect2(289, 704, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vekwi"]
+atlas = ExtResource("1_au53q")
+region = Rect2(289, 736, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uur7"]
+atlas = ExtResource("1_au53q")
+region = Rect2(321, 704, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_508y5"]
+atlas = ExtResource("1_au53q")
+region = Rect2(321, 736, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dypvd"]
+atlas = ExtResource("1_au53q")
+region = Rect2(353, 704, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuoyk"]
+atlas = ExtResource("1_au53q")
+region = Rect2(353, 736, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vllph"]
+atlas = ExtResource("1_au53q")
+region = Rect2(385, 704, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us6kr"]
+atlas = ExtResource("1_au53q")
+region = Rect2(385, 736, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bidav"]
+atlas = ExtResource("1_au53q")
+region = Rect2(417, 704, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6go1"]
+atlas = ExtResource("1_au53q")
+region = Rect2(417, 736, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r6fh"]
+atlas = ExtResource("1_au53q")
+region = Rect2(289, 768, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmlad"]
+atlas = ExtResource("1_au53q")
+region = Rect2(289, 800, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie7vk"]
+atlas = ExtResource("1_au53q")
+region = Rect2(321, 768, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn6wc"]
+atlas = ExtResource("1_au53q")
+region = Rect2(321, 800, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajqgu"]
+atlas = ExtResource("1_au53q")
+region = Rect2(353, 768, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guaoj"]
+atlas = ExtResource("1_au53q")
+region = Rect2(353, 800, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sl7nb"]
+atlas = ExtResource("1_au53q")
+region = Rect2(385, 768, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ac7w"]
+atlas = ExtResource("1_au53q")
+region = Rect2(385, 800, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17r05"]
+atlas = ExtResource("1_au53q")
+region = Rect2(417, 768, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwq7u"]
+atlas = ExtResource("1_au53q")
+region = Rect2(417, 800, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa27v"]
+atlas = ExtResource("1_au53q")
+region = Rect2(290, 641, 28, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roxcm"]
+atlas = ExtResource("1_au53q")
+region = Rect2(290, 672, 28, 32)
+
+[node name="levels" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_j04mn")
+
+[node name="BG" type="Node2D" parent="."]
+position = Vector2(0, 46)
+
+[node name="BG3" type="Sprite2D" parent="BG"]
+position = Vector2(992, 273)
+scale = Vector2(1.84, 1.84)
+texture = ExtResource("1_uwxte")
+
+[node name="BG2" type="Sprite2D" parent="BG"]
+position = Vector2(904, 323)
+scale = Vector2(2.12, 2.12)
+texture = ExtResource("2_qx4pf")
+
+[node name="BG1" type="Sprite2D" parent="BG"]
+position = Vector2(1064, 343)
+scale = Vector2(2.36, 2.36)
+texture = ExtResource("3_7wk2v")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -36.0
+offset_right = 91.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.20826, 4.20826)
+pivot_offset = Vector2(90.921, 34.266)
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl_1" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_7bebc")
+texture_pressed = SubResource("AtlasTexture_vekwi")
+
+[node name="lvl_2" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_3uur7")
+texture_pressed = SubResource("AtlasTexture_508y5")
+
+[node name="lvl_3" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_dypvd")
+texture_pressed = SubResource("AtlasTexture_iuoyk")
+
+[node name="lvl_4" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_vllph")
+texture_pressed = SubResource("AtlasTexture_us6kr")
+
+[node name="lvl_5" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_bidav")
+texture_pressed = SubResource("AtlasTexture_w6go1")
+
+[node name="lvl_6" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_6r6fh")
+texture_pressed = SubResource("AtlasTexture_vmlad")
+
+[node name="lvl_7" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_ie7vk")
+texture_pressed = SubResource("AtlasTexture_tn6wc")
+
+[node name="lvl_8" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_ajqgu")
+texture_pressed = SubResource("AtlasTexture_guaoj")
+
+[node name="lvl_9" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_sl7nb")
+texture_pressed = SubResource("AtlasTexture_2ac7w")
+
+[node name="lvl_10" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_17r05")
+texture_pressed = SubResource("AtlasTexture_bwq7u")
+
+[node name="home_btn" type="TextureButton" parent="CanvasLayer"]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 127.0
+offset_bottom = 137.0
+pivot_offset = Vector2(35, 16)
+texture_normal = SubResource("AtlasTexture_aa27v")
+texture_pressed = SubResource("AtlasTexture_roxcm")
+stretch_mode = 5
+script = ExtResource("2_3xihk")
+
+[connection signal="pressed" from="CanvasLayer/home_btn" to="CanvasLayer/home_btn" method="_on_pressed"]

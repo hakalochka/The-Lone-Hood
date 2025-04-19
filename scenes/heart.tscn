@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvb2au872np1j"]
+
+[ext_resource type="Script" path="res://scripts/heart.gd" id="1_b24do"]
+[ext_resource type="Texture2D" uid="uid://bd6nvjyxf0aml" path="res://assets/sprites/heart/background.png" id="1_x8x5o"]
+[ext_resource type="Texture2D" uid="uid://dr3ucyqiy0aq3" path="res://assets/sprites/heart/border.png" id="2_p06kr"]
+[ext_resource type="Texture2D" uid="uid://b7guwh1173wee" path="res://assets/sprites/heart/heart.png" id="3_fpo16"]
+
+[node name="heart" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(17, 17)
+offset_right = 17.0
+offset_bottom = 17.0
+scale = Vector2(4, 4)
+script = ExtResource("1_b24do")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(8.5, 8.5)
+texture = ExtResource("1_x8x5o")
+
+[node name="border" type="Sprite2D" parent="."]
+position = Vector2(8.5, 8.5)
+texture = ExtResource("2_p06kr")
+
+[node name="heart" type="Sprite2D" parent="."]
+position = Vector2(8.5, 8.5)
+texture = ExtResource("3_fpo16")

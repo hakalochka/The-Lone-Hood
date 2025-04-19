@@ -1,8 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://caeixyfhpqmgj"]
+[gd_scene load_steps=27 format=3 uid="uid://caeixyfhpqmgj"]
 
 [ext_resource type="Texture2D" uid="uid://buvkbek8ukyd2" path="res://assets/sprites/skullwolf.png" id="1_71dm5"]
 [ext_resource type="Script" path="res://scripts/skullwolf.gd" id="1_vfxhl"]
-[ext_resource type="PackedScene" uid="uid://btut28se4ejsy" path="res://scenes/killzone.tscn" id="2_pgevg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_22ibf"]
 atlas = ExtResource("1_71dm5")
@@ -195,9 +194,9 @@ sprite_frames = SubResource("SpriteFrames_wp0tn")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="killzone" parent="." instance=ExtResource("2_pgevg")]
+[node name="hitBox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
 position = Vector2(0, -10)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_qh15u")

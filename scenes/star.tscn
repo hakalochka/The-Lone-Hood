@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://ckbehd0eq08bv"]
+
+[ext_resource type="Texture2D" uid="uid://bvcuj58w7c0w7" path="res://assets/sprites/Star.png" id="1_2eg84"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn7ij"]
+atlas = ExtResource("1_2eg84")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2xfv"]
+atlas = ExtResource("1_2eg84")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndbh0"]
+atlas = ExtResource("1_2eg84")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u58fl"]
+atlas = ExtResource("1_2eg84")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uughb"]
+atlas = ExtResource("1_2eg84")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq14j"]
+atlas = ExtResource("1_2eg84")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06hbo"]
+atlas = ExtResource("1_2eg84")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m8lfg"]
+animations = [{
+"frames": [{
+"duration": 7.0,
+"texture": SubResource("AtlasTexture_tn7ij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2xfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndbh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u58fl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uughb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq14j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06hbo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="star" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(20, 22)
+offset_right = 20.0
+offset_bottom = 22.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_m8lfg")
+autoplay = "default"
+frame_progress = 0.941197

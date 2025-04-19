@@ -138,7 +138,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_67bve")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 9.0
 }, {
@@ -224,18 +224,16 @@ animations = [{
 radius = 6.0
 height = 22.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 1
 position = Vector2(0, -16)
 script = ExtResource("1_sur6n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xfu5b")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.997068
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 2
 position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_kp7di")
 
@@ -245,3 +243,11 @@ zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = -400
 limit_bottom = 50
+
+[node name="hurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_kp7di")
+
+[connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]

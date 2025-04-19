@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://brcuux78qgtha"]
+
+[ext_resource type="Texture2D" uid="uid://bd6nvjyxf0aml" path="res://assets/sprites/heart/background.png" id="1_i0c2i"]
+[ext_resource type="Script" path="res://scripts/health_pickup.gd" id="1_ism01"]
+[ext_resource type="Texture2D" uid="uid://dr3ucyqiy0aq3" path="res://assets/sprites/heart/border.png" id="2_eeem8"]
+[ext_resource type="Texture2D" uid="uid://b7guwh1173wee" path="res://assets/sprites/heart/heart.png" id="3_beduj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qqnlq"]
+radius = 9.0
+
+[node name="health_pickup" type="Area2D"]
+script = ExtResource("1_ism01")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(8.5, 8.5)
+texture = ExtResource("1_i0c2i")
+
+[node name="border" type="Sprite2D" parent="."]
+position = Vector2(8.5, 8.5)
+texture = ExtResource("2_eeem8")
+
+[node name="heart" type="Sprite2D" parent="."]
+position = Vector2(8.5, 8.5)
+texture = ExtResource("3_beduj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 7)
+shape = SubResource("CircleShape2D_qqnlq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

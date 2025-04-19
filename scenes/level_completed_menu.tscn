@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyxkqi0ap1v8w"]
+
+[ext_resource type="PackedScene" uid="uid://bxfnryenhqalq" path="res://scenes/level_completed_txt.tscn" id="1_7wu3j"]
+[ext_resource type="PackedScene" uid="uid://dkiii52fop4ev" path="res://scenes/star_container.tscn" id="2_e7mgt"]
+
+[node name="level_completed_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(33.7984, 25.0055)
+color = Color(0, 0, 0, 0.392157)
+
+[node name="level_completed_txt" parent="." instance=ExtResource("1_7wu3j")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.259259
+anchor_right = 0.5
+anchor_bottom = 0.259259
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+metadata/_edit_use_anchors_ = true
+
+[node name="star_container" parent="." instance=ExtResource("2_e7mgt")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -44.0
+offset_right = 34.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.36, 3.36)

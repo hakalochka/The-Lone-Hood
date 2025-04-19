@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkmeoegwpwx7b"]
+
+[ext_resource type="Texture2D" uid="uid://byvnr023y1cl4" path="res://assets/fonts/Wooden font v1/Wood-5x.png" id="1_gu258"]
+
+[node name="play_txt" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="p" type="Sprite2D" parent="."]
+position = Vector2(-72, -45)
+texture = ExtResource("1_gu258")
+region_enabled = true
+region_rect = Rect2(230, 136, 60, 89)
+
+[node name="l" type="Sprite2D" parent="."]
+position = Vector2(-24, -45)
+texture = ExtResource("1_gu258")
+region_enabled = true
+region_rect = Rect2(830, 385, 20, 90)
+
+[node name="a" type="Sprite2D" parent="."]
+position = Vector2(21, -35)
+texture = ExtResource("1_gu258")
+region_enabled = true
+region_rect = Rect2(5, 405, 55, 70)
+
+[node name="y" type="Sprite2D" parent="."]
+position = Vector2(83.5, -28)
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("1_gu258")
+region_enabled = true
+region_rect = Rect2(5, 655, 60, 95)

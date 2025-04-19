@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://c86vbkm054epy"]
+
+[ext_resource type="Texture2D" uid="uid://byvnr023y1cl4" path="res://assets/fonts/Wooden font v1/Wood-5x.png" id="1_62y83"]
+
+[node name="you_lost_txt" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="y" type="Sprite2D" parent="."]
+position = Vector2(-190.5, -45)
+texture = ExtResource("1_62y83")
+region_enabled = true
+region_rect = Rect2(5, 260, 55, 90)
+
+[node name="o" type="Sprite2D" parent="."]
+position = Vector2(-127.5, -35)
+texture = ExtResource("1_62y83")
+region_enabled = true
+region_rect = Rect2(155, 530, 60, 70)
+
+[node name="u" type="Sprite2D" parent="."]
+position = Vector2(-59.5, -35)
+texture = ExtResource("1_62y83")
+region_enabled = true
+region_rect = Rect2(605, 530, 60, 70)
+
+[node name="l" type="Sprite2D" parent="."]
+position = Vector2(38.5, -44)
+texture = ExtResource("1_62y83")
+region_enabled = true
+region_rect = Rect2(830, 386, 20, 88)
+
+[node name="o2" type="Sprite2D" parent="."]
+position = Vector2(89.5, -35)
+texture = ExtResource("1_62y83")
+region_enabled = true
+region_rect = Rect2(155, 530, 60, 70)
+
+[node name="s" type="Sprite2D" parent="."]
+position = Vector2(158.5, -35)
+texture = ExtResource("1_62y83")
+region_enabled = true
+region_rect = Rect2(455, 530, 60, 70)
+
+[node name="t" type="Sprite2D" parent="."]
+position = Vector2(215, -45)
+texture = ExtResource("1_62y83")
+region_enabled = true
+region_rect = Rect2(530, 510, 40, 90)

@@ -1,0 +1,107 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxfnryenhqalq"]
+
+[ext_resource type="Texture2D" uid="uid://byvnr023y1cl4" path="res://assets/fonts/Wooden font v1/Wood-5x.png" id="1_v38fr"]
+
+[node name="level_completed_txt" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -448.0
+offset_top = -57.5
+offset_right = 448.0
+offset_bottom = 57.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(448, 51)
+
+[node name="l" type="Sprite2D" parent="Panel"]
+position = Vector2(25, 46)
+texture = ExtResource("1_v38fr")
+region_enabled = true
+region_rect = Rect2(830, 10, 50, 90)
+
+[node name="e" type="Sprite2D" parent="Panel"]
+position = Vector2(87.5, 56)
+texture = ExtResource("1_v38fr")
+region_enabled = true
+region_rect = Rect2(305, 405, 60, 69)
+
+[node name="v" type="Sprite2D" parent="Panel"]
+position = Vector2(151.5, 56)
+texture = ExtResource("1_v38fr")
+region_enabled = true
+region_rect = Rect2(680, 530, 55, 70)
+
+[node name="e2" type="Sprite2D" parent="Panel"]
+position = Vector2(216.5, 57)
+texture = ExtResource("1_v38fr")
+region_enabled = true
+region_rect = Rect2(305, 405, 60, 69)
+
+[node name="l2" type="Sprite2D" parent="Panel"]
+position = Vector2(267.5, 46)
+texture = ExtResource("1_v38fr")
+region_enabled = true
+region_rect = Rect2(830, 385, 20, 90)
+
+[node name="c" type="Sprite2D" parent="Panel"]
+position = Vector2(370.5, 45)
+texture = ExtResource("1_v38fr")
+region_enabled = true
+region_rect = Rect2(155, 10, 61, 90)
+
+[node name="o" type="Sprite2D" parent="Panel"]
+position = Vector2(440.5, 56)
+texture = ExtResource("1_v38fr")
+region_enabled = true
+region_rect = Rect2(155, 530, 60, 70)
+
+[node name="m" type="Sprite2D" parent="Panel"]
+position = Vector2(509.5, 56)
+texture = ExtResource("1_v38fr")
+region_enabled = true
+region_rect = Rect2(5, 530, 60, 70)
+
+[node name="p" type="Sprite2D" parent="Panel"]
+position = Vector2(580.5, 68)
+texture = ExtResource("1_v38fr")
+region_enabled = true
+region_rect = Rect2(230, 530, 60, 94)
+
+[node name="l3" type="Sprite2D" parent="Panel"]
+position = Vector2(631.5, 46)
+texture = ExtResource("1_v38fr")
+region_enabled = true
+region_rect = Rect2(830, 385, 20, 90)
+
+[node name="e3" type="Sprite2D" parent="Panel"]
+position = Vector2(680.5, 56)
+texture = ExtResource("1_v38fr")
+region_enabled = true
+region_rect = Rect2(305, 405, 60, 69)
+
+[node name="t" type="Sprite2D" parent="Panel"]
+position = Vector2(737.5, 47)
+texture = ExtResource("1_v38fr")
+region_enabled = true
+region_rect = Rect2(530, 510, 40, 90)
+
+[node name="e4" type="Sprite2D" parent="Panel"]
+position = Vector2(796.5, 56)
+texture = ExtResource("1_v38fr")
+region_enabled = true
+region_rect = Rect2(305, 405, 60, 69)
+
+[node name="d" type="Sprite2D" parent="Panel"]
+position = Vector2(865.5, 46)
+texture = ExtResource("1_v38fr")
+region_enabled = true
+region_rect = Rect2(230, 385, 60, 90)

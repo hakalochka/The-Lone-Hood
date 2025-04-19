@@ -1,11 +1,22 @@
 extends CharacterBody2D
 
-const SPEED = 120.0
-const JUMP_VELOCITY = -350.0
+signal healthChanged
+signal lost
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hurt_collision: CollisionShape2D = $hurtBox/CollisionShape2D
+
+@export var SPEED = 120.0
+const JUMP_VELOCITY = -350.0
+
+@export var maxHealth: int = 3
+@onready var currentHealth: int = maxHealth
+
+var isDead = false
 
 func _physics_process(delta: float) -> void:
+	if isDead:
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -36,5 +47,21 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
 	move_and_slide()
+
+
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	if area.name == "hitBox":
+		currentHealth -= 1
+		healthChanged.emit(currentHealth)
+	if currentHealth <= 0:
+		die()
+		
+func die():
+	isDead = true
+	animated_sprite.stop()
+	animated_sprite.play("death")
+	hurt_collision.call_deferred("set_disabled", true)
+	await animated_sprite.animation_finished
+	lost.emit()

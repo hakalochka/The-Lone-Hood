@@ -21,10 +21,14 @@ func _physics_process(delta: float) -> void:
 	var distance_from_start = global_position.x - start_position.x
 	
 	if ray_cast_right.is_colliding():
-		direction = -1
+		var collider = ray_cast_right.get_collider()
+		if collider and not collider.is_in_group("Player"):
+			direction = -1
 		
 	if ray_cast_left.is_colliding():
-		direction = 1
+		var collider = ray_cast_right.get_collider()
+		if collider and not collider.is_in_group("Player"):
+			direction = 1
 		
 		
 	if abs(distance_from_start) >= patrol_distance:

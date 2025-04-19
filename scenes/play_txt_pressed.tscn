@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://cll0fpfa7be7l"]
+
+[ext_resource type="Texture2D" uid="uid://h4vnr128cp01" path="res://assets/fonts/Wooden font v1/WoodPressed-5x.png" id="1_f25px"]
+
+[node name="play_txt_pressed" type="Node2D"]
+
+[node name="p" type="Sprite2D" parent="."]
+position = Vector2(-72, -45)
+texture = ExtResource("1_f25px")
+region_enabled = true
+region_rect = Rect2(230, 136, 60, 89)
+
+[node name="l" type="Sprite2D" parent="."]
+position = Vector2(-24, -45)
+texture = ExtResource("1_f25px")
+region_enabled = true
+region_rect = Rect2(830, 385, 20, 90)
+
+[node name="a" type="Sprite2D" parent="."]
+position = Vector2(21, -35)
+texture = ExtResource("1_f25px")
+region_enabled = true
+region_rect = Rect2(5, 405, 55, 70)
+
+[node name="y" type="Sprite2D" parent="."]
+position = Vector2(83.5, -28)
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("1_f25px")
+region_enabled = true
+region_rect = Rect2(5, 655, 60, 95)

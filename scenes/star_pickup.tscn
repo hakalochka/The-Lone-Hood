@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://tn4n1dm8ewmg"]
+
+[ext_resource type="Texture2D" uid="uid://bvcuj58w7c0w7" path="res://assets/sprites/Star.png" id="1_2eg84"]
+[ext_resource type="Script" path="res://scripts/star.gd" id="1_hcw44"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bcrn"]
+atlas = ExtResource("1_2eg84")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22hj8"]
+atlas = ExtResource("1_2eg84")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkhvl"]
+atlas = ExtResource("1_2eg84")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tw7nm"]
+atlas = ExtResource("1_2eg84")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jdkk"]
+atlas = ExtResource("1_2eg84")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxi0g"]
+atlas = ExtResource("1_2eg84")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma8f8"]
+atlas = ExtResource("1_2eg84")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nr06b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bcrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22hj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkhvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tw7nm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jdkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxi0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma8f8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_noem5"]
+radius = 9.05539
+
+[node name="star" type="Area2D"]
+script = ExtResource("1_hcw44")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.15256e-07, 7.15256e-07)
+scale = Vector2(0.8125, 0.8125)
+sprite_frames = SubResource("SpriteFrames_nr06b")
+frame_progress = 0.192858
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_noem5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://blpngerheysih"]
+
+[ext_resource type="Script" path="res://scripts/health_container.gd" id="1_knrun"]
+
+[node name="healthContainer" type="HBoxContainer"]
+offset_right = 59.0
+offset_bottom = 17.0
+scale = Vector2(4, 4)
+script = ExtResource("1_knrun")
