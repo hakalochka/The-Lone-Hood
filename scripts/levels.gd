@@ -9,6 +9,7 @@ func _ready() -> void:
 			button.pressed.connect(_on_lvl_btn_pressed.bind(button))
 
 func _on_lvl_btn_pressed(button):
+	SoundManager.play()
 	var path = "res://scenes/" + button.name + ".tscn"
 	get_tree().change_scene_to_file(path)
 	print(button)

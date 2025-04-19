@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://daggmm0jv4jo"]
+
+[ext_resource type="AudioStream" uid="uid://chahpkd7enbyc" path="res://assets/sounds/Pixel 4.mp3" id="1_t8hr5"]
+
+[node name="music" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_t8hr5")
+autoplay = true
+bus = &"Music"

@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://h4vnr128cp01" path="res://assets/fonts/Wooden font v1/WoodPressed-5x.png" id="1_f25px"]
 
-[node name="play_txt_pressed" type="Node2D"]
+[node name="play_txt_pressed" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="p" type="Sprite2D" parent="."]
 position = Vector2(-72, -45)

@@ -1,8 +1,8 @@
 Credits
-Developed by Hakalochka
+Developed by Hakalochka Games
 
 Graphics by:
-Character - Penzilla https://penzilla.itch.io/hooded-protagonist
+Character - Penzilla Design https://penzilla.itch.io/hooded-protagonist
 Tilesest - The Flavare https://theflavare.itch.io/forest-nature-fantasy-tileset
 Spikes - froggu999 https://froggu999.itch.io/stabby-spikes
 Flying Demon - Mattz Art https://xzany.itch.io/flying-demon-2d-pixel-art
@@ -10,6 +10,7 @@ Bat - Papoy Core https://papoycore.itch.io/bat
 Skull wolf - Atari Boy https://atari-boy.itch.io/skull-wolf-pixel-art
 The Shadowed Wetlands Boss - Escape https://escape-pixel.itch.io/the-shadowed-wetlands-boss
 Enemy Toad - Gabri Corti https://gabry-corti.itch.io/toad
-Star and GUI - Narik https://soulofkiran.itch.io/pixel-art-animated-star
-                     https://soulofkiran.itch.io/pixel-art-wooden-gui-v1
+GUI - Narik https://soulofkiran.itch.io/pixel-art-wooden-gui-v1
 Hearst - VampireGirl https://fliflifly.itch.io/hearts-and-health-bar
+Music by:
+alkakrab https://alkakrab.itch.io/free-12-tracks-pixel-rpg-game-music-pack

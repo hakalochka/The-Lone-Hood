@@ -1,7 +1,7 @@
 extends TextureButton
 
-@onready var play_txt: Node2D = $play_txt
-@onready var play_txt_pressed: Node2D = $play_txt_pressed
+@onready var play_txt: Control = $play_txt
+@onready var play_txt_pressed: Control = $play_txt_pressed
 
 
 
@@ -16,4 +16,5 @@ func _on_button_up() -> void:
 
 
 func _on_pressed() -> void:
+	SoundManager.play()
 	get_tree().change_scene_to_file("res://scenes/levels.tscn")

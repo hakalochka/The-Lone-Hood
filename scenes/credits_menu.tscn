@@ -1,0 +1,179 @@
+[gd_scene load_steps=9 format=3 uid="uid://cr8280k60070w"]
+
+[ext_resource type="Texture2D" uid="uid://c16ud0wpas67b" path="res://assets/sprites/environment/BG_3.png" id="1_a4l6a"]
+[ext_resource type="Texture2D" uid="uid://c7fg0ph2f8m4h" path="res://assets/sprites/environment/BG_2.png" id="2_oqoyn"]
+[ext_resource type="Texture2D" uid="uid://b8mrl0ivkf4kf" path="res://assets/sprites/environment/BG_1.png" id="3_mt011"]
+[ext_resource type="Texture2D" uid="uid://mwm3humh3ied" path="res://assets/sprites/Wooden Pixel Art GUI 32x32.png" id="4_rwgkb"]
+[ext_resource type="FontFile" uid="uid://c6fqxdlwfx6mi" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_45qrc"]
+[ext_resource type="Script" path="res://scripts/home_btn.gd" id="6_dwanu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twjmp"]
+atlas = ExtResource("4_rwgkb")
+region = Rect2(290, 641, 28, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc75k"]
+atlas = ExtResource("4_rwgkb")
+region = Rect2(290, 672, 28, 32)
+
+[node name="credits_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="Node2D" parent="."]
+position = Vector2(0, 46)
+
+[node name="BG3" type="Sprite2D" parent="BG"]
+position = Vector2(992, 273)
+scale = Vector2(1.84, 1.84)
+texture = ExtResource("1_a4l6a")
+
+[node name="BG2" type="Sprite2D" parent="BG"]
+position = Vector2(904, 323)
+scale = Vector2(2.12, 2.12)
+texture = ExtResource("2_oqoyn")
+
+[node name="BG1" type="Sprite2D" parent="BG"]
+position = Vector2(1064, 343)
+scale = Vector2(2.36, 2.36)
+texture = ExtResource("3_mt011")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.5
+offset_top = -47.0
+offset_right = 61.5
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.45482, 6.45482)
+pivot_offset = Vector2(60.9081, 45.851)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(40, 47)
+texture = ExtResource("4_rwgkb")
+region_enabled = true
+region_rect = Rect2(451, 642, 80, 94)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel"]
+position = Vector2(101, 47)
+texture = ExtResource("4_rwgkb")
+region_enabled = true
+region_rect = Rect2(498, 642, 43, 94)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 9.25547
+offset_top = 16.7486
+offset_right = 228.255
+offset_bottom = 158.749
+scale = Vector2(0.475396, 0.475396)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.109804, 0.137255, 1)
+theme_override_fonts/font = ExtResource("5_45qrc")
+theme_override_font_sizes/font_size = 8
+text = "Developed by Hahalochka Games"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.109804, 0.137255, 1)
+theme_override_fonts/font = ExtResource("5_45qrc")
+theme_override_font_sizes/font_size = 8
+text = "Graphics by:"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 21
+theme_override_constants/v_separation = 5
+columns = 2
+
+[node name="Label3" type="Label" parent="Panel/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.109804, 0.137255, 1)
+theme_override_fonts/font = ExtResource("5_45qrc")
+theme_override_font_sizes/font_size = 8
+text = "Penzilla Design"
+
+[node name="Label4" type="Label" parent="Panel/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.109804, 0.137255, 1)
+theme_override_fonts/font = ExtResource("5_45qrc")
+theme_override_font_sizes/font_size = 8
+text = "The Flavare"
+
+[node name="Label5" type="Label" parent="Panel/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.109804, 0.137255, 1)
+theme_override_fonts/font = ExtResource("5_45qrc")
+theme_override_font_sizes/font_size = 8
+text = "froggu999"
+
+[node name="Label6" type="Label" parent="Panel/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.109804, 0.137255, 1)
+theme_override_fonts/font = ExtResource("5_45qrc")
+theme_override_font_sizes/font_size = 8
+text = "Papoy Core"
+
+[node name="Label7" type="Label" parent="Panel/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.109804, 0.137255, 1)
+theme_override_fonts/font = ExtResource("5_45qrc")
+theme_override_font_sizes/font_size = 8
+text = "Atari Boy"
+
+[node name="Label8" type="Label" parent="Panel/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.109804, 0.137255, 1)
+theme_override_fonts/font = ExtResource("5_45qrc")
+theme_override_font_sizes/font_size = 8
+text = "Narik"
+
+[node name="Label9" type="Label" parent="Panel/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.109804, 0.137255, 1)
+theme_override_fonts/font = ExtResource("5_45qrc")
+theme_override_font_sizes/font_size = 8
+text = "VampireGirl"
+
+[node name="Label3" type="Label" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.109804, 0.137255, 1)
+theme_override_fonts/font = ExtResource("5_45qrc")
+theme_override_font_sizes/font_size = 8
+text = "Music by alkakrab"
+horizontal_alignment = 1
+
+[node name="home_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 127.0
+offset_bottom = 137.0
+pivot_offset = Vector2(35, 16)
+texture_normal = SubResource("AtlasTexture_twjmp")
+texture_pressed = SubResource("AtlasTexture_tc75k")
+stretch_mode = 5
+script = ExtResource("6_dwanu")
+
+[connection signal="pressed" from="home_btn" to="home_btn" method="_on_pressed"]

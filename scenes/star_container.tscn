@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkiii52fop4ev"]
+[gd_scene load_steps=3 format=3 uid="uid://dkiii52fop4ev"]
 
+[ext_resource type="Script" path="res://scripts/star_container.gd" id="1_1xpam"]
 [ext_resource type="PackedScene" uid="uid://ckbehd0eq08bv" path="res://scenes/star.tscn" id="1_36jgx"]
 
 [node name="star_container" type="HBoxContainer"]
@@ -8,6 +9,7 @@ offset_bottom = 22.0
 pivot_offset = Vector2(34, 19)
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("1_1xpam")
 
 [node name="star" parent="." instance=ExtResource("1_36jgx")]
 layout_mode = 2

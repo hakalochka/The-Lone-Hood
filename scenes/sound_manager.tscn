@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2gqp1jr4egde"]
+
+[ext_resource type="AudioStream" uid="uid://cun723s7jilm3" path="res://assets/sounds/Keyboard_Click_6.wav" id="1_4ogpy"]
+
+[node name="SoundManager" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_4ogpy")
+bus = &"SFX"

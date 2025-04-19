@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://me0wgnsii35r"]
+[gd_scene load_steps=21 format=3 uid="uid://me0wgnsii35r"]
 
 [ext_resource type="Texture2D" uid="uid://c16ud0wpas67b" path="res://assets/sprites/environment/BG_3.png" id="1_kbkx8"]
 [ext_resource type="Texture2D" uid="uid://c7fg0ph2f8m4h" path="res://assets/sprites/environment/BG_2.png" id="2_l1h8c"]
 [ext_resource type="Texture2D" uid="uid://b8mrl0ivkf4kf" path="res://assets/sprites/environment/BG_1.png" id="3_hckau"]
 [ext_resource type="Texture2D" uid="uid://mwm3humh3ied" path="res://assets/sprites/Wooden Pixel Art GUI 32x32.png" id="4_3eyog"]
+[ext_resource type="Script" path="res://scripts/options_btn.gd" id="5_3sfwp"]
 [ext_resource type="PackedScene" uid="uid://dkmeoegwpwx7b" path="res://scenes/play_txt.tscn" id="5_ftks8"]
 [ext_resource type="Script" path="res://scripts/play_btn.gd" id="5_le5rn"]
 [ext_resource type="PackedScene" uid="uid://cll0fpfa7be7l" path="res://scenes/play_txt_pressed.tscn" id="6_g1472"]
@@ -12,11 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://b6rcylok3c087" path="res://scenes/credits_txt.tscn" id="10_084yy"]
 [ext_resource type="Script" path="res://scripts/quit_btn.gd" id="11_je46a"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e8e1u"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn1o4"]
 atlas = ExtResource("4_3eyog")
 region = Rect2(290, 576, 28, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pgem7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgli5"]
 atlas = ExtResource("4_3eyog")
 region = Rect2(290, 608, 28, 32)
 
@@ -70,14 +71,16 @@ texture = ExtResource("3_hckau")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="audio_btn" type="TextureButton" parent="CanvasLayer"]
-offset_left = 65.0
-offset_top = 58.0
-offset_right = 150.0
-offset_bottom = 156.0
-texture_normal = SubResource("AtlasTexture_e8e1u")
-texture_pressed = SubResource("AtlasTexture_pgem7")
-stretch_mode = 0
+[node name="options_btn" type="TextureButton" parent="CanvasLayer"]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 127.0
+offset_bottom = 137.0
+pivot_offset = Vector2(35, 16)
+texture_normal = SubResource("AtlasTexture_kn1o4")
+texture_pressed = SubResource("AtlasTexture_rgli5")
+stretch_mode = 5
+script = ExtResource("5_3sfwp")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 clip_contents = true
@@ -106,11 +109,17 @@ script = ExtResource("5_le5rn")
 
 [node name="play_txt_pressed" parent="CanvasLayer/VBoxContainer/play_btn" instance=ExtResource("6_g1472")]
 visible = false
-position = Vector2(44.22, 24.111)
+offset_left = 44.22
+offset_top = 24.111
+offset_right = 44.22
+offset_bottom = 24.111
 scale = Vector2(0.203, 0.203)
 
 [node name="play_txt" parent="CanvasLayer/VBoxContainer/play_btn" instance=ExtResource("5_ftks8")]
-position = Vector2(44.2205, 23.1618)
+offset_left = 44.2205
+offset_top = 23.1618
+offset_right = 44.2205
+offset_bottom = 23.1618
 scale = Vector2(0.203367, 0.203367)
 
 [node name="credits_btn" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
@@ -121,11 +130,17 @@ script = ExtResource("8_28jek")
 
 [node name="credits_txt_pressed" parent="CanvasLayer/VBoxContainer/credits_btn" instance=ExtResource("9_iol1h")]
 visible = false
-position = Vector2(45.667, 24.7778)
+offset_left = 45.667
+offset_top = 24.7778
+offset_right = 45.667
+offset_bottom = 24.7778
 scale = Vector2(0.203, 0.203)
 
 [node name="credits_txt" parent="CanvasLayer/VBoxContainer/credits_btn" instance=ExtResource("10_084yy")]
-position = Vector2(45.6667, 24)
+offset_left = 45.6667
+offset_top = 24.0
+offset_right = 45.6667
+offset_bottom = 24.0
 scale = Vector2(0.203, 0.203)
 
 [node name="quit_btn" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
@@ -134,9 +149,11 @@ texture_normal = SubResource("AtlasTexture_58kcf")
 texture_pressed = SubResource("AtlasTexture_3x21s")
 script = ExtResource("11_je46a")
 
+[connection signal="pressed" from="CanvasLayer/options_btn" to="CanvasLayer/options_btn" method="_on_pressed"]
 [connection signal="button_down" from="CanvasLayer/VBoxContainer/play_btn" to="CanvasLayer/VBoxContainer/play_btn" method="_on_button_down"]
 [connection signal="button_up" from="CanvasLayer/VBoxContainer/play_btn" to="CanvasLayer/VBoxContainer/play_btn" method="_on_button_up"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/play_btn" to="CanvasLayer/VBoxContainer/play_btn" method="_on_pressed"]
 [connection signal="button_down" from="CanvasLayer/VBoxContainer/credits_btn" to="CanvasLayer/VBoxContainer/credits_btn" method="_on_button_down"]
 [connection signal="button_up" from="CanvasLayer/VBoxContainer/credits_btn" to="CanvasLayer/VBoxContainer/credits_btn" method="_on_button_up"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/credits_btn" to="CanvasLayer/VBoxContainer/credits_btn" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/quit_btn" to="CanvasLayer/VBoxContainer/quit_btn" method="_on_pressed"]

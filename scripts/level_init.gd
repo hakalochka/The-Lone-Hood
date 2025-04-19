@@ -6,6 +6,11 @@ extends Node2D
 @onready var time: Label = $CanvasLayer/time
 @onready var finish: Area2D = $finish
 @onready var game_manager: Node = %gameManager
+@onready var canvas_layer: CanvasLayer = $CanvasLayer
+@onready var respawn_position: Marker2D = $respawnPosition
+@onready var killzone: Area2D = $killzone
+
+@onready var start_position = respawn_position.global_position
 
 var total_time_sec: int = 0
 
@@ -17,7 +22,7 @@ func _ready() -> void:
 	player.healthChanged.connect(health_container.update_hearts)
 	player.lost.connect(open_lost_menu)
 	
-	
+	killzone.fall.connect(respawn)
 	game_manager.healthCheck.connect(health_restore)
 	finish.levelCompleted.connect(level_completed)
 	
@@ -31,7 +36,7 @@ func open_lost_menu():
 	timer.stop()
 	get_tree().paused = true
 	var lost_menu = preload("res://scenes/lost_menu.tscn").instantiate()
-	$CanvasLayer.add_child(lost_menu)
+	canvas_layer.add_child(lost_menu)
 
 
 func _on_timer_timeout() -> void:
@@ -44,12 +49,18 @@ func pause():
 	if Input.is_action_pressed("pause"):
 		get_tree().paused = true
 		var pause_menu = preload("res://scenes/pause_menu.tscn").instantiate()
-		$CanvasLayer.add_child(pause_menu)
+		canvas_layer.add_child(pause_menu)
 
 func level_completed():
-	$CanvasLayer.visible = false
+	time.visible = false
+	health_container.visible = false
 	get_tree().paused = true
+	var level_completed_menu = preload("res://scenes/level_completed_menu.tscn").instantiate()
+	level_completed_menu.total_time_sec = total_time_sec
+	level_completed_menu.stars = game_manager.stars
+	canvas_layer.add_child(level_completed_menu)
 	print("finish")
+
 
 
 func health_restore():
@@ -58,3 +69,7 @@ func health_restore():
 		player.currentHealth += 1
 		player.healthChanged.emit(player.currentHealth)
 		
+func respawn():
+	player.global_position = start_position
+	player.currentHealth -=1
+	player.healthChanged.emit(player.currentHealth)
