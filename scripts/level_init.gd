@@ -72,6 +72,7 @@ func health_restore():
 		player.healthChanged.emit(player.currentHealth)
 		
 func respawn():
-	player.global_position = start_position
 	player.currentHealth -=1
 	player.healthChanged.emit(player.currentHealth)
+	if player.currentHealth <= 0: open_lost_menu()
+	else: player.global_position = start_position
