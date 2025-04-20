@@ -6,10 +6,10 @@ const SECTION_AUDIO := "Audio"
 
 var config := ConfigFile.new()
 
-var default_bindings := {
+const default_bindings := {
 	"left": [KEY_A, KEY_LEFT],
 	"right": [KEY_D, KEY_RIGHT],
-	"jump": [KEY_W, KEY_LEFT],
+	"jump": [KEY_W, KEY_UP],
 	"pause": [KEY_ESCAPE, KEY_P]
 }
 
@@ -22,6 +22,7 @@ func _ready() -> void:
 	if not config.has_section(SECTION_AUDIO):
 		save_audio_settings("music", 1.0)
 		save_audio_settings("sfx", 1.0)
+	load_saved_settings()
 	
 func save_keybindings(bindings: Dictionary) -> void:
 
@@ -88,3 +89,27 @@ func reset_to_default_audio():
 	config.set_value("Audio", "music", 1.0)
 	config.set_value("Audio", "sfx", 1.0)
 	config.save(CONFIG_PATH)
+	
+func load_saved_settings():
+	for action_name in config.get_section_keys(SECTION_KEYBINDINGS):
+		if not InputMap.has_action(action_name):
+			continue
+
+		# Clear existing bindings
+		for event in InputMap.action_get_events(action_name):
+			if event is InputEventKey:
+				InputMap.action_erase_event(action_name, event)
+
+		var keycodes = config.get_value(SECTION_KEYBINDINGS, action_name)
+		for code in keycodes:
+			var event := InputEventKey.new()
+			event.physical_keycode = code
+			InputMap.action_add_event(action_name, event)
+	
+	var audio_settings = {}
+	for key in config.get_section_keys(SECTION_AUDIO):
+		audio_settings[key] = config.get_value(SECTION_AUDIO, key)
+
+	# Apply the audio settings to the game
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(audio_settings.get("music", 1.0)))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(audio_settings.get("sfx", 1.0)))

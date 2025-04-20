@@ -118,3 +118,8 @@ func _on_reset_pressed() -> void:
 	sfx_slider.value = 1.0
 	_on_music_slider_value_changed(1.0)
 	_on_sfx_slider_value_changed(1.0)
+
+
+func _on_back_btn_pressed() -> void:
+	SoundManager.play()
+	queue_free()

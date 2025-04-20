@@ -5,6 +5,7 @@ signal lost
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_collision: CollisionShape2D = $hurtBox/CollisionShape2D
+@onready var hit_sound: AudioStreamPlayer2D = $hit_sound
 
 @export var SPEED = 120.0
 const JUMP_VELOCITY = -350.0
@@ -55,6 +56,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 	if area.name == "hitBox":
 		currentHealth -= 1
 		healthChanged.emit(currentHealth)
+		hit_sound.play()
 	if currentHealth <= 0:
 		die()
 		

@@ -6,7 +6,7 @@ extends Node2D
 
 func _ready() -> void:
 	animation_player.play("RESET")
-	down_timer.start()
+	up_timer.start()
 
 func _on_down_timer_timeout() -> void:
 	animation_player.play("up")

@@ -5,10 +5,10 @@ extends Node2D
 @onready var timer: Timer = $Timer
 @onready var time: Label = $CanvasLayer/time
 @onready var finish: Area2D = $finish
-@onready var game_manager: Node = %gameManager
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var respawn_position: Marker2D = $respawnPosition
 @onready var killzone: Area2D = $killzone
+
 
 @onready var start_position = respawn_position.global_position
 
@@ -16,14 +16,14 @@ var total_time_sec: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	GameManager.show_mouse(false)
 	health_container.set_max_hearts(player.maxHealth)
 	health_container.update_hearts(player.currentHealth)
 	player.healthChanged.connect(health_container.update_hearts)
 	player.lost.connect(open_lost_menu)
 	
 	killzone.fall.connect(respawn)
-	game_manager.healthCheck.connect(health_restore)
+	GameManager.healthCheck.connect(health_restore)
 	finish.levelCompleted.connect(level_completed)
 	
 	timer.start()
@@ -37,6 +37,7 @@ func open_lost_menu():
 	get_tree().paused = true
 	var lost_menu = preload("res://scenes/lost_menu.tscn").instantiate()
 	canvas_layer.add_child(lost_menu)
+	GameManager.show_mouse(true)
 
 
 func _on_timer_timeout() -> void:
@@ -50,6 +51,7 @@ func pause():
 		get_tree().paused = true
 		var pause_menu = preload("res://scenes/pause_menu.tscn").instantiate()
 		canvas_layer.add_child(pause_menu)
+		GameManager.show_mouse(true)
 
 func level_completed():
 	time.visible = false
@@ -57,15 +59,15 @@ func level_completed():
 	get_tree().paused = true
 	var level_completed_menu = preload("res://scenes/level_completed_menu.tscn").instantiate()
 	level_completed_menu.total_time_sec = total_time_sec
-	level_completed_menu.stars = game_manager.stars
+	level_completed_menu.stars = GameManager.stars
 	canvas_layer.add_child(level_completed_menu)
-	print("finish")
+	GameManager.show_mouse(true)
 
 
 
 func health_restore():
 	if player.currentHealth < player.maxHealth:
-		game_manager.can_restore = true
+		GameManager.can_restore = true
 		player.currentHealth += 1
 		player.healthChanged.emit(player.currentHealth)
 		

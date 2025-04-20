@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=4 uid="uid://cvpjtsruyyngr"]
+[gd_scene load_steps=11 format=4 uid="uid://cvpjtsruyyngr"]
 
+[ext_resource type="Script" path="res://scripts/level_init.gd" id="1_g1bcc"]
 [ext_resource type="Texture2D" uid="uid://bv4t1i50tnw54" path="res://assets/sprites/environment/Terrain_and_Props.png" id="1_sdyea"]
 [ext_resource type="PackedScene" uid="uid://btut28se4ejsy" path="res://scenes/killzone.tscn" id="2_wj7xo"]
 [ext_resource type="PackedScene" uid="uid://78m8j561eg6" path="res://scenes/bat.tscn" id="3_0jeyx"]
 [ext_resource type="PackedScene" uid="uid://166ypjx78qmt" path="res://scenes/player.tscn" id="5_xph78"]
 [ext_resource type="PackedScene" uid="uid://blpngerheysih" path="res://scenes/health_container.tscn" id="6_0egbm"]
+[ext_resource type="PackedScene" uid="uid://dwc2eydsn58t0" path="res://scenes/finish.tscn" id="7_je8q3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vr1rm"]
 texture = ExtResource("1_sdyea")
@@ -414,6 +416,7 @@ sources/0 = SubResource("TileSetAtlasSource_vr1rm")
 distance = -80.0
 
 [node name="level_1" type="Node2D"]
+script = ExtResource("1_g1bcc")
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="."]
 position = Vector2(1, 0)
@@ -435,7 +438,7 @@ tile_set = SubResource("TileSet_eu4oo")
 shape = SubResource("WorldBoundaryShape2D_ar0aq")
 
 [node name="bat" parent="." instance=ExtResource("3_0jeyx")]
-position = Vector2(216, -140)
+position = Vector2(217, -63)
 
 [node name="Player" parent="." instance=ExtResource("5_xph78")]
 position = Vector2(37, -40)
@@ -447,3 +450,11 @@ offset_left = 40.0
 offset_top = 34.0
 offset_right = 99.0
 offset_bottom = 51.0
+
+[node name="respawnPosition" type="Marker2D" parent="."]
+position = Vector2(137, -88)
+
+[node name="finish" parent="." instance=ExtResource("7_je8q3")]
+position = Vector2(334, -68)
+
+[node name="Timer" type="Timer" parent="."]

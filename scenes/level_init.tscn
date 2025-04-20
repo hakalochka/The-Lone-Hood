@@ -3,13 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://b8mrl0ivkf4kf" path="res://assets/sprites/environment/BG_1.png" id="1_5m18b"]
 [ext_resource type="Script" path="res://scripts/level_init.gd" id="1_qt213"]
 [ext_resource type="Texture2D" uid="uid://c16ud0wpas67b" path="res://assets/sprites/environment/BG_3.png" id="1_uc7c2"]
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="2_71wae"]
 [ext_resource type="PackedScene" uid="uid://166ypjx78qmt" path="res://scenes/player.tscn" id="2_xwdbo"]
 [ext_resource type="Texture2D" uid="uid://c7fg0ph2f8m4h" path="res://assets/sprites/environment/BG_2.png" id="2_yi8oj"]
 [ext_resource type="FontFile" uid="uid://cjvqvwtt2n4g7" path="res://assets/fonts/PixelOperator8.ttf" id="4_qhhgd"]
 [ext_resource type="PackedScene" uid="uid://blpngerheysih" path="res://scenes/health_container.tscn" id="6_ulepb"]
 [ext_resource type="Texture2D" uid="uid://bv4t1i50tnw54" path="res://assets/sprites/environment/Terrain_and_Props.png" id="7_bhv61"]
 [ext_resource type="PackedScene" uid="uid://dwc2eydsn58t0" path="res://scenes/finish.tscn" id="11_8x5c7"]
+[ext_resource type="PackedScene" uid="uid://tn4n1dm8ewmg" path="res://scenes/star_pickup.tscn" id="12_3x5yp"]
 [ext_resource type="PackedScene" uid="uid://btut28se4ejsy" path="res://scenes/killzone.tscn" id="14_440w7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dfcqv"]
@@ -420,10 +420,6 @@ sources/0 = SubResource("TileSetAtlasSource_dfcqv")
 process_mode = 1
 script = ExtResource("1_qt213")
 
-[node name="gameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("2_71wae")
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -496,5 +492,8 @@ position = Vector2(32, -16)
 
 [node name="killzone" parent="." instance=ExtResource("14_440w7")]
 position = Vector2(504, 304)
+
+[node name="star" parent="." instance=ExtResource("12_3x5yp")]
+position = Vector2(80, -39)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
