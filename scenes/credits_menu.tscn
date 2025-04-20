@@ -156,6 +156,13 @@ theme_override_fonts/font = ExtResource("5_45qrc")
 theme_override_font_sizes/font_size = 8
 text = "VampireGirl"
 
+[node name="Label10" type="Label" parent="Panel/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.109804, 0.137255, 1)
+theme_override_fonts/font = ExtResource("5_45qrc")
+theme_override_font_sizes/font_size = 8
+text = "Gabri Corti"
+
 [node name="Label3" type="Label" parent="Panel/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.172549, 0.109804, 0.137255, 1)

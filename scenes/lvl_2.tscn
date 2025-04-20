@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://soouj7wlpv2k"]
+[gd_scene load_steps=7 format=4 uid="uid://soouj7wlpv2k"]
 
 [ext_resource type="PackedScene" uid="uid://b46bb043tywkg" path="res://scenes/level_init.tscn" id="1_4ufxn"]
 [ext_resource type="PackedScene" uid="uid://gy0ocujkykgi" path="res://scenes/spike.tscn" id="2_rfrg1"]
 [ext_resource type="PackedScene" uid="uid://brcuux78qgtha" path="res://scenes/health_pickup.tscn" id="3_u02y3"]
 [ext_resource type="PackedScene" uid="uid://78m8j561eg6" path="res://scenes/bat.tscn" id="4_v5fwu"]
 [ext_resource type="PackedScene" uid="uid://caeixyfhpqmgj" path="res://scenes/skullwolf.tscn" id="5_flr6o"]
+[ext_resource type="PackedScene" uid="uid://cuo7avdrxtlsv" path="res://scenes/toad.tscn" id="6_flmto"]
 
 [node name="level_init" instance=ExtResource("1_4ufxn")]
 
@@ -31,3 +32,6 @@ position = Vector2(192, -96)
 
 [node name="skullwolf" parent="." index="13" instance=ExtResource("5_flr6o")]
 position = Vector2(560, -16)
+
+[node name="toad" parent="." index="14" instance=ExtResource("6_flmto")]
+position = Vector2(304, -32)
