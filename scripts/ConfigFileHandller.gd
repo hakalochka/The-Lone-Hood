@@ -34,26 +34,26 @@ func save_keybindings(bindings: Dictionary) -> void:
 		config.set_value(SECTION_KEYBINDINGS, action_name, keys)
 	config.save(CONFIG_PATH)
 	
-func load_keybindings() -> void:
-	var config := ConfigFile.new()
-	if config.load(CONFIG_PATH) != OK:
-		return
+func load_keybindings() -> Dictionary:
+	var loaded_bindings := {}
+	for action_name in config.get_section_keys(SECTION_KEYBINDINGS):
+		if not InputMap.has_action(action_name):
+			continue
 
-	if not config.has_section(SECTION_KEYBINDINGS):
-		return
-
-	var keys := config.get_section_keys(SECTION_KEYBINDINGS)
-	for action_name in keys:
-		# Clear old bindings
+		# Clear existing bindings
 		for event in InputMap.action_get_events(action_name):
 			if event is InputEventKey:
 				InputMap.action_erase_event(action_name, event)
 
 		var keycodes = config.get_value(SECTION_KEYBINDINGS, action_name)
+		loaded_bindings[action_name] = keycodes
+
 		for code in keycodes:
-			var input_event := InputEventKey.new()
-			input_event.physical_keycode = code
-			InputMap.action_add_event(action_name, input_event)
+			var event := InputEventKey.new()
+			event.physical_keycode = code
+			InputMap.action_add_event(action_name, event)
+
+	return loaded_bindings
 
 
 func reset_to_default_keybindings() -> void:
@@ -83,3 +83,8 @@ func load_audio_settings():
 		audio_settings[key] = config.get_value(SECTION_AUDIO, key)
 
 	return audio_settings
+
+func reset_to_default_audio():
+	config.set_value("Audio", "music", 1.0)
+	config.set_value("Audio", "sfx", 1.0)
+	config.save(CONFIG_PATH)
