@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://cvpjtsruyyngr"]
+[gd_scene load_steps=9 format=4 uid="uid://cvpjtsruyyngr"]
 
 [ext_resource type="Texture2D" uid="uid://bv4t1i50tnw54" path="res://assets/sprites/environment/Terrain_and_Props.png" id="1_sdyea"]
 [ext_resource type="PackedScene" uid="uid://btut28se4ejsy" path="res://scenes/killzone.tscn" id="2_wj7xo"]
 [ext_resource type="PackedScene" uid="uid://78m8j561eg6" path="res://scenes/bat.tscn" id="3_0jeyx"]
-[ext_resource type="PackedScene" uid="uid://caeixyfhpqmgj" path="res://scenes/skullwolf.tscn" id="4_gyd72"]
 [ext_resource type="PackedScene" uid="uid://166ypjx78qmt" path="res://scenes/player.tscn" id="5_xph78"]
 [ext_resource type="PackedScene" uid="uid://blpngerheysih" path="res://scenes/health_container.tscn" id="6_0egbm"]
 
@@ -438,14 +437,8 @@ shape = SubResource("WorldBoundaryShape2D_ar0aq")
 [node name="bat" parent="." instance=ExtResource("3_0jeyx")]
 position = Vector2(216, -140)
 
-[node name="skullwolf" parent="." instance=ExtResource("4_gyd72")]
-position = Vector2(154, -18)
-
 [node name="Player" parent="." instance=ExtResource("5_xph78")]
 position = Vector2(37, -40)
-
-[node name="TileMap" type="TileMap" parent="."]
-format = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
