@@ -27,6 +27,7 @@ GameManager="*res://scripts/game_manager.gd"
 window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="res://assets/sprites/Cursor.png"
 
 [global_group]
 
