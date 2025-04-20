@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://daggmm0jv4jo"]
 
-[ext_resource type="AudioStream" uid="uid://chahpkd7enbyc" path="res://assets/sounds/Pixel 4.mp3" id="1_t8hr5"]
+[ext_resource type="AudioStream" uid="uid://cbsxa776js0o7" path="res://assets/sounds/Medieval Vol. 2 5 (Loop).mp3" id="1_cq5eh"]
 
 [node name="music" type="AudioStreamPlayer"]
 process_mode = 3
-stream = ExtResource("1_t8hr5")
+stream = ExtResource("1_cq5eh")
 autoplay = true
 bus = &"Music"

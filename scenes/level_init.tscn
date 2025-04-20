@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://b46bb043tywkg"]
+[gd_scene load_steps=13 format=4 uid="uid://b46bb043tywkg"]
 
 [ext_resource type="Texture2D" uid="uid://b8mrl0ivkf4kf" path="res://assets/sprites/environment/BG_1.png" id="1_5m18b"]
 [ext_resource type="Script" path="res://scripts/level_init.gd" id="1_qt213"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://blpngerheysih" path="res://scenes/health_container.tscn" id="6_ulepb"]
 [ext_resource type="Texture2D" uid="uid://bv4t1i50tnw54" path="res://assets/sprites/environment/Terrain_and_Props.png" id="7_bhv61"]
 [ext_resource type="PackedScene" uid="uid://dwc2eydsn58t0" path="res://scenes/finish.tscn" id="11_8x5c7"]
-[ext_resource type="PackedScene" uid="uid://tn4n1dm8ewmg" path="res://scenes/star_pickup.tscn" id="12_3x5yp"]
 [ext_resource type="PackedScene" uid="uid://btut28se4ejsy" path="res://scenes/killzone.tscn" id="14_440w7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dfcqv"]
@@ -341,9 +340,11 @@ texture = ExtResource("7_bhv61")
 19:9/size_in_atlas = Vector2i(1, 2)
 19:9/0 = 0
 19:9/0/texture_origin = Vector2i(0, 8)
+19:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 1.625, -8, 1.625)
 19:11/size_in_atlas = Vector2i(1, 2)
 19:11/0 = 0
 19:11/0/texture_origin = Vector2i(0, 8)
+19:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 1.625, -8, 1.625)
 18:10/0 = 0
 18:11/0 = 0
 18:12/0 = 0
@@ -425,6 +426,7 @@ script = ExtResource("1_qt213")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(0, 176)
 motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1929, 0)
 
 [node name="BG3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(1016, -216)
@@ -433,10 +435,13 @@ texture = ExtResource("1_uc7c2")
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(0, 104)
 motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1929, 0)
 
 [node name="BG2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(784, -208)
 texture = ExtResource("2_yi8oj")
+region_enabled = true
+region_rect = Rect2(0, 0, 1817, 400)
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(0, 64)
@@ -481,6 +486,14 @@ theme_override_fonts/font = ExtResource("4_qhhgd")
 theme_override_font_sizes/font_size = 32
 text = "Time: 00:00"
 
+[node name="TileMapLayer3" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAByAP//AAAHAAIAAABzAP//AAAHAAIAAAB0AP//AAAHAAIAAAB1AP//AAAHAAIAAAB2AP//AAAHAAIAAAB3AP//AAAHAAIAAAB4AP//AAAHAAIAAAB5AP//AAAHAAIAAAB6AP//AAAHAAIAAAB6AP7/AAAHAAIAAAB7AP7/AAAHAAIAAAA=")
+tile_set = SubResource("TileSet_ytc2l")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAByAP//AAAHAAIAAABzAP//AAAHAAIAAAB0AP//AAAHAAIAAAB1AP//AAAHAAIAAAB2AP//AAAHAAIAAAB3AP//AAAHAAIAAAB4AP//AAAHAAIAAAB5AP//AAAHAAIAAAB6AP//AAAHAAIAAAB6AP7/AAAHAAIAAAB7AP7/AAAHAAIAAAA=")
+tile_set = SubResource("TileSet_ytc2l")
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAFAP//AAAOAAAAAAAAAP//AAAPAAAAAAABAP//AAAOAAAAAAACAP//AAAPAAAAAAADAP//AAAOAAAAAAAEAP//AAAPAAAAAAAGAP//AAAPAAAAAAAKAP//AAAPAAQAAAAHAP//AAAOAAAAAAAIAP//AAAOAAAAAAAJAP//AAAOAAAAAAALAP//AAAOAAAAAAAAAAAAAAAOAAIAAAABAAAAAAANAAUAAAACAAAAAAAPAAIAAAADAAAAAAAQAAIAAAAEAAAAAAAPAAIAAAAFAAAAAAANAAUAAAAGAAAAAAAPAAIAAAAHAAAAAAAPAAIAAAAIAAAAAAAOAAIAAAAJAAAAAAAPAAIAAAAKAAAAAAARAAUAAAALAAAAAAAPAAIAAAALAAEAAAAPAAIAAAAKAAEAAAAPAAIAAAAJAAEAAAAPAAIAAAAIAAEAAAAPAAIAAAAHAAEAAAAPAAIAAAAGAAEAAAAPAAIAAAAFAAEAAAAPAAIAAAAEAAEAAAAPAAIAAAADAAEAAAAOAAIAAAACAAEAAAAPAAIAAAABAAEAAAAPAAIAAAAAAAEAAAAPAAIAAAAAAAIAAAAQAAIAAAAAAAMAAAAPAAIAAAABAAIAAAAPAAIAAAABAAMAAAAPAAIAAAACAAMAAAAOAAIAAAADAAMAAAAPAAIAAAADAAIAAAAPAAIAAAACAAIAAAAPAAIAAAAEAAMAAAAPAAIAAAAFAAIAAAANAAUAAAAGAAIAAAAPAAIAAAAHAAIAAAAPAAIAAAAEAAIAAAAPAAIAAAAFAAMAAAAPAAIAAAAGAAMAAAAPAAIAAAAHAAMAAAARAAUAAAAIAAIAAAAPAAIAAAAJAAIAAAARAAUAAAAIAAMAAAAPAAIAAAAJAAMAAAAPAAIAAAAKAAMAAAAPAAIAAAALAAMAAAAPAAIAAAALAAIAAAAPAAIAAAAKAAIAAAAPAAIAAAALAAQAAAAPAAIAAAD//wMAAAAJAAQAAAD//wIAAAAJAAQAAAD//wEAAAAJAAQAAAD//wAAAAAJAAQAAAD/////AAAFAAQAAAD///7/AAAFAAQAAAD///3/AAAFAAQAAAD///z/AAAFAAQAAAD///v/AAAFAAQAAAD///r/AAAFAAQAAAD///n/AAAFAAQAAAD///j/AAAFAAQAAAD///f/AAAFAAQAAAD///b/AAAFAAQAAAD///X/AAAFAAQAAAD+//X/AAAFAAQAAAD///T/AAAFAAQAAAD///P/AAAFAAQAAAD///L/AAAFAAQAAAD///H/AAAFAAQAAAD///D/AAAFAAQAAAD+//j/AAAFAAQAAAD+//f/AAAFAAQAAAD+//b/AAAFAAQAAAD+//T/AAAFAAQAAAD+//P/AAAFAAQAAAD+//L/AAAFAAQAAAD+//H/AAAFAAQAAAD+//D/AAAAAA8AAAD+//n/AAAFAAQAAAD+//r/AAAFAAQAAAD+//v/AAAFAAQAAAD+//z/AAAFAAQAAAD+//3/AAAFAAQAAAD+//7/AAAFAAQAAAD+////AAAFAAQAAAD+/wAAAAAFAAQAAAD+/wEAAAAFAAQAAAByAP//AAAHAAIAAABzAP//AAAHAAIAAAB0AP//AAAHAAIAAAB1AP//AAAHAAIAAAB2AP//AAAHAAIAAAB3AP//AAAHAAIAAAB4AP//AAAHAAIAAAB5AP//AAAHAAIAAAB6AP//AAAHAAIAAAB6AP7/AAAHAAIAAAB7AP7/AAAHAAIAAAA=")
 tile_set = SubResource("TileSet_ytc2l")
@@ -492,8 +505,5 @@ position = Vector2(32, -16)
 
 [node name="killzone" parent="." instance=ExtResource("14_440w7")]
 position = Vector2(504, 304)
-
-[node name="star" parent="." instance=ExtResource("12_3x5yp")]
-position = Vector2(80, -39)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
