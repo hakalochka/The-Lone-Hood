@@ -35,13 +35,15 @@ func _physics_process(delta: float) -> void:
 	var distance_to_player = global_position.distance_to(player.global_position)
 
 	if distance_to_player < chase_range:
-		if player.global_position.x > global_position.x:
-			direction = 1
-		else:
-			direction = -1
-
-		velocity.x = direction * speed
-		animated_sprite.play("run")
+		var stop_range = abs(player.global_position.x - global_position.x)
+		if stop_range > 30:
+			if player.global_position.x > global_position.x:
+				direction = 1
+			else:
+				direction = -1
+			velocity.x = direction * speed
+			animated_sprite.play("run")
+	
 	else:
 		velocity.x = 0
 		animated_sprite.play("idle")
