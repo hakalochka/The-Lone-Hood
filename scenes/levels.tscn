@@ -145,51 +145,61 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_7bebc")
 texture_pressed = SubResource("AtlasTexture_vekwi")
+texture_disabled = SubResource("AtlasTexture_vekwi")
 
 [node name="lvl_2" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_3uur7")
 texture_pressed = SubResource("AtlasTexture_508y5")
+texture_disabled = SubResource("AtlasTexture_508y5")
 
 [node name="lvl_3" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_dypvd")
 texture_pressed = SubResource("AtlasTexture_iuoyk")
+texture_disabled = SubResource("AtlasTexture_iuoyk")
 
 [node name="lvl_4" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_vllph")
 texture_pressed = SubResource("AtlasTexture_us6kr")
+texture_disabled = SubResource("AtlasTexture_us6kr")
 
 [node name="lvl_5" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_bidav")
 texture_pressed = SubResource("AtlasTexture_w6go1")
+texture_disabled = SubResource("AtlasTexture_w6go1")
 
 [node name="lvl_6" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_6r6fh")
 texture_pressed = SubResource("AtlasTexture_vmlad")
+texture_disabled = SubResource("AtlasTexture_vmlad")
 
 [node name="lvl_7" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ie7vk")
 texture_pressed = SubResource("AtlasTexture_tn6wc")
+texture_disabled = SubResource("AtlasTexture_tn6wc")
 
 [node name="lvl_8" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ajqgu")
 texture_pressed = SubResource("AtlasTexture_guaoj")
+texture_disabled = SubResource("AtlasTexture_guaoj")
 
 [node name="lvl_9" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_sl7nb")
 texture_pressed = SubResource("AtlasTexture_2ac7w")
+texture_disabled = SubResource("AtlasTexture_2ac7w")
 
 [node name="lvl_10" type="TextureButton" parent="CanvasLayer/GridContainer" groups=["Levels"]]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_17r05")
 texture_pressed = SubResource("AtlasTexture_bwq7u")
+texture_disabled = SubResource("AtlasTexture_bwq7u")
 
 [node name="home_btn" type="TextureButton" parent="CanvasLayer"]
 offset_left = 32.0

@@ -12,29 +12,37 @@ func _ready() -> void:
 	var s = total_time_sec - m * 60
 	time.text = "Time: " + "%02d:%02d" % [m, s]
 	star_container.update_stars(stars)
-
+	
+	
+	var next_level = get_next_level()
+	
+	GameManager.avalible_levels["lvl_" + str(next_level)] = true
+	GameManager.save_file()
 
 
 func _on_next_btn_pressed() -> void:
 	GameManager.stars = 0
 	get_tree().paused = false
 	SoundManager.play()
-	var current_scene_path = get_tree().current_scene.scene_file_path
 	
-	# Extract the level number from the filename (e.g., "Level1.tscn")
-	var filename = current_scene_path.get_file().get_basename()  # e.g., "Level1"
-	var current_level = filename.substr(4, filename.length() - 4).to_int()
-	print(current_level)
-	var next_level = current_level + 1
-	
+	var next_level = get_next_level()
 	var next_level_path = "res://scenes/lvl_%d.tscn" % next_level
 	
 	if ResourceLoader.exists(next_level_path):
 		get_tree().change_scene_to_file(next_level_path)
 	else:
-		print("Next level does not exist!")
+		get_tree().change_scene_to_file("res://scenes/levels.tscn")
+
 		
 
+func get_next_level():
+	var current_scene_path = get_tree().current_scene.scene_file_path
+	
+	# Extract the level number from the filename 
+	var lvlname = current_scene_path.get_file().get_basename()  #lvl_1
+	var current_level = lvlname.substr(4, lvlname.length() - 4).to_int() #1
+	var next_level = current_level + 1
+	return next_level
 
 func _on_options_btn_pressed() -> void:
 	SoundManager.play()

@@ -115,9 +115,9 @@ func _on_reset_pressed() -> void:
 	update_key_labels()
 	ConfigFileHandller.reset_to_default_audio()
 	music_slider.value = 0.5
-	sfx_slider.value = 1.0
+	sfx_slider.value = 0.5
 	_on_music_slider_value_changed(0.5)
-	_on_sfx_slider_value_changed(1.0)
+	_on_sfx_slider_value_changed(0.5)
 
 
 func _on_back_btn_pressed() -> void:

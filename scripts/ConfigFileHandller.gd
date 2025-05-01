@@ -13,7 +13,7 @@ const default_bindings := {
 	"pause": [KEY_ESCAPE, KEY_P]
 }
 
-const default_audio := {"music": 0.5, "sfx": 1.0}
+const default_audio := {"music": 0.5, "sfx": 0.5}
 
 func _ready() -> void:
 	if config.load(CONFIG_PATH) != OK:
@@ -21,7 +21,7 @@ func _ready() -> void:
 	
 	if not config.has_section(SECTION_AUDIO):
 		save_audio_settings("music", 0.5)
-		save_audio_settings("sfx", 1.0)
+		save_audio_settings("sfx", 0.5)
 	load_saved_settings()
 	
 func save_keybindings(bindings: Dictionary) -> void:
@@ -87,7 +87,7 @@ func load_audio_settings():
 
 func reset_to_default_audio():
 	config.set_value("Audio", "music", 0.5)
-	config.set_value("Audio", "sfx", 1.0)
+	config.set_value("Audio", "sfx", 0.5)
 	config.save(CONFIG_PATH)
 	
 func load_saved_settings():
