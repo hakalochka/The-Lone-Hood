@@ -72,10 +72,10 @@ region_rect = Rect2(498, 642, 43, 94)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
 layout_mode = 0
-offset_left = 9.25547
-offset_top = 16.7486
-offset_right = 228.255
-offset_bottom = 158.749
+offset_left = 6.93167
+offset_top = 14.2698
+offset_right = 236.932
+offset_bottom = 156.27
 scale = Vector2(0.475396, 0.475396)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
@@ -103,7 +103,7 @@ horizontal_alignment = 1
 [node name="GridContainer" type="GridContainer" parent="Panel/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/h_separation = 21
+theme_override_constants/h_separation = 11
 theme_override_constants/v_separation = 5
 columns = 2
 
@@ -162,6 +162,21 @@ theme_override_colors/font_color = Color(0.172549, 0.109804, 0.137255, 1)
 theme_override_fonts/font = ExtResource("5_45qrc")
 theme_override_font_sizes/font_size = 8
 text = "Gabri Corti"
+
+[node name="Label11" type="Label" parent="Panel/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.109804, 0.137255, 1)
+theme_override_fonts/font = ExtResource("5_45qrc")
+theme_override_font_sizes/font_size = 8
+text = "ankousse26"
+
+[node name="Label12" type="Label" parent="Panel/ScrollContainer/VBoxContainer/GridContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.109804, 0.137255, 1)
+theme_override_fonts/font = ExtResource("5_45qrc")
+theme_override_font_sizes/font_size = 8
+text = "CaptainSkolot"
 
 [node name="Label3" type="Label" parent="Panel/ScrollContainer/VBoxContainer"]
 layout_mode = 2

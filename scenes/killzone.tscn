@@ -6,7 +6,6 @@
 
 [node name="killzone" type="Area2D"]
 collision_layer = 0
-collision_mask = 7
 script = ExtResource("1_q0uck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

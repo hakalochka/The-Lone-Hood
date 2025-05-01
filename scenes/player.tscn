@@ -228,6 +228,7 @@ height = 22.0
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 1
 position = Vector2(0, -16)
+collision_layer = 5
 script = ExtResource("1_sur6n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -240,9 +241,9 @@ shape = SubResource("CapsuleShape2D_kp7di")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -20)
-zoom = Vector2(3, 3)
+zoom = Vector2(2.5, 2.5)
 limit_left = 0
-limit_top = -400
+limit_top = -520
 limit_bottom = 50
 
 [node name="hurtBox" type="Area2D" parent="."]

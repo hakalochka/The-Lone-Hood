@@ -2,8 +2,8 @@ extends HBoxContainer
 
 @onready var heartClass = preload("res://scenes/heart.tscn")
 
-func set_max_hearts(max: int):
-	for i in range(max):
+func set_max_hearts(max_hearts: int):
+	for i in range(max_hearts):
 		var heart = heartClass.instantiate()
 		add_child(heart)
 	

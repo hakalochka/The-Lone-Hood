@@ -8,6 +8,8 @@ extends Node2D
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var respawn_position: Marker2D = $respawnPosition
 @onready var killzone: Area2D = $killzone
+@onready var checkpoint: Area2D = $checkpoint
+
 
 
 @onready var start_position = respawn_position.global_position
@@ -29,7 +31,7 @@ func _ready() -> void:
 	timer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pause()
 
 func open_lost_menu():
@@ -76,3 +78,10 @@ func respawn():
 	player.healthChanged.emit(player.currentHealth)
 	if player.currentHealth <= 0: open_lost_menu()
 	else: player.global_position = start_position
+
+
+func _on_checkpoint_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		print("checkpoint")
+		respawn_position.global_position = checkpoint.global_position
+		start_position = respawn_position.global_position

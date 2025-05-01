@@ -40,9 +40,9 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cfhfr"]
-radius = 7.07107
+radius = 8.71119
 
-[node name="bat" type="Node2D"]
+[node name="bat" type="Node2D" groups=["Enemy"]]
 scale = Vector2(0.824674, 0.824674)
 script = ExtResource("1_0oyw3")
 

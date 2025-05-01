@@ -28,7 +28,7 @@ func _ready() -> void:
 				var action_name = row.name  # Make sure each row is named after the action!
 				for i in range(2):  # 0 = primary, 1 = secondary
 					var button = buttons_box.get_child(i)
-					var keys = custom_bindings[action_name]
+					#var keys = custom_bindings[action_name]
 					if button is Button:
 						button.pressed.connect(_on_key_button_pressed.bind(action_name, i))
 						button.text = get_key_name(action_name, i)

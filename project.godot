@@ -33,6 +33,7 @@ mouse_cursor/custom_image="res://assets/sprites/Cursor.png"
 
 Player=""
 Levels=""
+Enemy=""
 
 [input]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dyxkqi0ap1v8w"]
+[gd_scene load_steps=16 format=3 uid="uid://dyxkqi0ap1v8w"]
 
 [ext_resource type="PackedScene" uid="uid://bxfnryenhqalq" path="res://scenes/level_completed_txt.tscn" id="1_7wu3j"]
 [ext_resource type="Script" path="res://scripts/level_completed_menu.gd" id="1_pkwcq"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://mwm3humh3ied" path="res://assets/sprites/Wooden Pixel Art GUI 32x32.png" id="4_6ev1i"]
 [ext_resource type="Script" path="res://scripts/home_btn.gd" id="5_4koj5"]
 [ext_resource type="Script" path="res://scripts/restart_btn.gd" id="5_hxsuc"]
-[ext_resource type="Script" path="res://scripts/options_btn.gd" id="7_r2n0w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7at8c"]
 atlas = ExtResource("4_6ev1i")
@@ -148,7 +147,6 @@ texture_pressed = SubResource("AtlasTexture_feyd2")
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_57jr3")
 texture_pressed = SubResource("AtlasTexture_e0fle")
-script = ExtResource("7_r2n0w")
 
 [node name="home_btn" type="TextureButton" parent="VBoxContainer"]
 process_mode = 3
@@ -160,5 +158,5 @@ script = ExtResource("5_4koj5")
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/restart_btn" to="VBoxContainer/HBoxContainer/restart_btn" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/next_btn" to="." method="_on_next_btn_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/options_btn" to="VBoxContainer/HBoxContainer/options_btn" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/options_btn" to="." method="_on_options_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/home_btn" to="VBoxContainer/home_btn" method="_on_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://caeixyfhpqmgj"]
+[gd_scene load_steps=31 format=3 uid="uid://caeixyfhpqmgj"]
 
 [ext_resource type="Texture2D" uid="uid://buvkbek8ukyd2" path="res://assets/sprites/skullwolf.png" id="1_71dm5"]
 [ext_resource type="Script" path="res://scripts/skullwolf.gd" id="1_vfxhl"]
@@ -71,25 +71,25 @@ region = Rect2(256, 0, 64, 64)
 atlas = ExtResource("1_71dm5")
 region = Rect2(320, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5c6su"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v48qo"]
 atlas = ExtResource("1_71dm5")
-region = Rect2(0, 64, 64, 64)
+region = Rect2(0, 65, 64, 65)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dobqv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sdbw"]
 atlas = ExtResource("1_71dm5")
-region = Rect2(64, 64, 64, 64)
+region = Rect2(64, 65, 64, 65)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_17wir"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sppnf"]
 atlas = ExtResource("1_71dm5")
-region = Rect2(128, 64, 64, 64)
+region = Rect2(128, 65, 64, 65)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4kjgg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m2e1"]
 atlas = ExtResource("1_71dm5")
-region = Rect2(192, 64, 64, 64)
+region = Rect2(192, 65, 64, 65)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hii1t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6i5l"]
 atlas = ExtResource("1_71dm5")
-region = Rect2(256, 64, 64, 64)
+region = Rect2(256, 65, 64, 65)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wp0tn"]
 animations = [{
@@ -161,19 +161,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5c6su")
+"texture": SubResource("AtlasTexture_v48qo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dobqv")
+"texture": SubResource("AtlasTexture_2sdbw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_17wir")
+"texture": SubResource("AtlasTexture_sppnf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4kjgg")
+"texture": SubResource("AtlasTexture_2m2e1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hii1t")
+"texture": SubResource("AtlasTexture_n6i5l")
 }],
 "loop": true,
 "name": &"run",
@@ -188,14 +188,113 @@ height = 40.0
 radius = 5.0
 height = 42.0
 
-[node name="skullwolf" type="CharacterBody2D"]
+[sub_resource type="Animation" id="Animation_ra5tm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hitBox/hitCollision:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_k0mkc"]
+resource_name = "death"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hitBox/hitCollision:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gbtjl"]
+_data = {
+"RESET": SubResource("Animation_ra5tm"),
+"death": SubResource("Animation_k0mkc")
+}
+
+[node name="skullwolf" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_vfxhl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -29)
+position = Vector2(0, -28)
 scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_wp0tn")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -219,6 +318,11 @@ position = Vector2(0, -10)
 target_position = Vector2(-27, 0)
 
 [node name="attackTimer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gbtjl")
+}
 
 [connection signal="body_entered" from="hitBox" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_exited" from="hitBox" to="." method="_on_hit_box_body_exited"]

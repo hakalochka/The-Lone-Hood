@@ -13,6 +13,8 @@ const JUMP_VELOCITY = -350.0
 @export var maxHealth: int = 3
 @onready var currentHealth: int = maxHealth
 
+@export var fireball_scene: PackedScene = preload("res://scenes/fireball.tscn")
+
 var isDead = false
 
 func _physics_process(delta: float) -> void:
@@ -67,3 +69,17 @@ func die():
 	hurt_collision.call_deferred("set_disabled", true)
 	await animated_sprite.animation_finished
 	lost.emit()
+
+#func _unhandled_input(event):
+	#if event.is_action_pressed("attack"): 
+		#shoot_fireball()
+
+func shoot_fireball():
+	var fireball = fireball_scene.instantiate()
+	get_parent().add_child(fireball)
+	fireball.global_position = global_position
+	var dir
+	if animated_sprite.flip_h: dir = Vector2.LEFT
+	else: dir = Vector2.RIGHT
+	fireball.direction = dir
+	

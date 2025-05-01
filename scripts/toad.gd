@@ -10,10 +10,15 @@ extends CharacterBody2D
 @export var speed: float = 30.0
 @export var chase_range := 250.0
 @export var attack_range := 28.0
+@export var maxHealth: int = 2
+@onready var currentHealth: int = maxHealth
 
 @onready var direction = -1 
 @onready var isAttacking := false
+@onready var isDead := false
 func _physics_process(delta: float) -> void:
+	if isDead:
+		return
 	if isAttacking:
 		return
 	
@@ -56,4 +61,9 @@ func _physics_process(delta: float) -> void:
 func _on_attack_timer_timeout() -> void:
 	isAttacking = false
 	
-	
+func take_damage(damage: int):
+	currentHealth -= damage
+	animated_sprite.play("damaged")
+	if currentHealth <= 0:
+		isDead = true
+		animation_player.play("death")

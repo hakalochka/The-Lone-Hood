@@ -2,6 +2,7 @@ extends Control
 
 @onready var time: Label = $time
 @onready var star_container: HBoxContainer = $star_container
+@onready var canvas_layer: CanvasLayer = get_node("/root/level_init/CanvasLayer")
 
 var total_time_sec: int = 0
 var stars: int = 0
@@ -15,6 +16,7 @@ func _ready() -> void:
 
 
 func _on_next_btn_pressed() -> void:
+	GameManager.stars = 0
 	get_tree().paused = false
 	SoundManager.play()
 	var current_scene_path = get_tree().current_scene.scene_file_path
@@ -32,3 +34,9 @@ func _on_next_btn_pressed() -> void:
 	else:
 		print("Next level does not exist!")
 		
+
+
+func _on_options_btn_pressed() -> void:
+	SoundManager.play()
+	var options_menu = preload("res://scenes/options_menu.tscn").instantiate()
+	canvas_layer.add_child(options_menu)
