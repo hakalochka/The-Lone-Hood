@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cfhfr"]
-radius = 8.71119
+radius = 12.3459
 
 [node name="bat" type="Node2D" groups=["Enemy"]]
 scale = Vector2(0.824674, 0.824674)
@@ -53,6 +53,8 @@ autoplay = "fly"
 frame_progress = 0.519404
 
 [node name="hitBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
 position = Vector2(1, 2)

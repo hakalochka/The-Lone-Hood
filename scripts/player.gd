@@ -74,12 +74,12 @@ func die():
 	#if event.is_action_pressed("attack"): 
 		#shoot_fireball()
 
-func shoot_fireball():
-	var fireball = fireball_scene.instantiate()
-	get_parent().add_child(fireball)
-	fireball.global_position = global_position
-	var dir
-	if animated_sprite.flip_h: dir = Vector2.LEFT
-	else: dir = Vector2.RIGHT
-	fireball.direction = dir
+#func shoot_fireball():
+	#var fireball = fireball_scene.instantiate()
+	#get_parent().add_child(fireball)
+	#fireball.global_position = global_position
+	#var dir
+	#if animated_sprite.flip_h: dir = Vector2.LEFT
+	#else: dir = Vector2.RIGHT
+	#fireball.direction = dir
 	

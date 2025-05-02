@@ -9,6 +9,7 @@ extends Node2D
 @onready var respawn_position: Marker2D = $respawnPosition
 @onready var killzone: Area2D = $killzone
 @onready var checkpoint: Area2D = $checkpoint
+#@onready var killzone_2: Area2D = $killzone2
 
 
 
@@ -19,12 +20,17 @@ var total_time_sec: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.show_mouse(false)
+	var current_scene_path = get_tree().current_scene.scene_file_path 
+	var lvlname = current_scene_path.get_file().get_basename()
+	if lvlname == "lvl_10": 
+		player.maxHealth = 5
+		player.currentHealth = player.maxHealth
 	health_container.set_max_hearts(player.maxHealth)
 	health_container.update_hearts(player.currentHealth)
 	player.healthChanged.connect(health_container.update_hearts)
 	player.lost.connect(open_lost_menu)
-	
 	killzone.fall.connect(respawn)
+
 	GameManager.healthCheck.connect(health_restore)
 	finish.levelCompleted.connect(level_completed)
 	

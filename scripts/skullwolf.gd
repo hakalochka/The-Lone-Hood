@@ -10,7 +10,7 @@ extends CharacterBody2D
 @onready var player = get_node("/root/level_init/Player")
 
 #@export var patrol_distance: float = 100.0
-@export var speed: float = 50.0
+@export var speed: float = 90.0
 @export var chase_range := 150.0
 @export var maxHealth: int = 3
 @onready var currentHealth: int = maxHealth

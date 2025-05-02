@@ -27,7 +27,7 @@ grow_vertical = 2
 position = Vector2(0, 46)
 
 [node name="BG3" type="Sprite2D" parent="BG"]
-position = Vector2(992, 273)
+position = Vector2(992, 314)
 scale = Vector2(1.84, 1.84)
 texture = ExtResource("1_a4l6a")
 
