@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://me0wgnsii35r"]
+[gd_scene load_steps=22 format=3 uid="uid://me0wgnsii35r"]
 
 [ext_resource type="Texture2D" uid="uid://c16ud0wpas67b" path="res://assets/sprites/environment/BG_3.png" id="1_kbkx8"]
 [ext_resource type="Texture2D" uid="uid://c7fg0ph2f8m4h" path="res://assets/sprites/environment/BG_2.png" id="2_l1h8c"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/options_btn.gd" id="5_3sfwp"]
 [ext_resource type="PackedScene" uid="uid://dkmeoegwpwx7b" path="res://scenes/play_txt.tscn" id="5_ftks8"]
 [ext_resource type="Script" path="res://scripts/play_btn.gd" id="5_le5rn"]
+[ext_resource type="Texture2D" uid="uid://bretbwsubcpaw" path="res://assets/sprites/The-lone-hood-txt.png" id="6_2o137"]
 [ext_resource type="PackedScene" uid="uid://cll0fpfa7be7l" path="res://scenes/play_txt_pressed.tscn" id="6_g1472"]
 [ext_resource type="Script" path="res://scripts/credits_btn.gd" id="8_28jek"]
 [ext_resource type="PackedScene" uid="uid://bs5v4s7tewnm1" path="res://scenes/credits_txt_pressed.tscn" id="9_iol1h"]
@@ -82,17 +83,37 @@ texture_pressed = SubResource("AtlasTexture_rgli5")
 stretch_mode = 5
 script = ExtResource("5_3sfwp")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-clip_contents = true
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -383.5
+offset_top = -194.0
+offset_right = 383.5
+offset_bottom = -111.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel"]
+position = Vector2(383.5, 41.5)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("6_2o137")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+clip_contents = true
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.500868
+anchor_bottom = 0.501543
 offset_left = -46.0
-offset_top = -52.0
+offset_top = 22.0
 offset_right = 46.0
-offset_bottom = 52.0
+offset_bottom = 126.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3.0117, 3)
